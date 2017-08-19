@@ -20,8 +20,22 @@ class SearchBar extends Component {
     // -- with separate defined method
     // return <input onChange = {this.onInputChange} />
 
-    // -- one-line code
-    return <input onChange = { event => console.log(event.target.value)} />
+    // refresh based on state change
+    // Value of the input: {this.state.term}
+
+    // IMPORTANT: controlled component
+    // User input does not change value of input
+    // It just triggers event,
+    // because we update state with event
+    // rerender component to update value
+    return(
+      <div>
+        <input
+        value = {this.state.term}
+        onChange = { event => this.setState({ term : event.target.value})} />
+
+      </div>
+    )
   }
 
   // onInputChange(event) {
