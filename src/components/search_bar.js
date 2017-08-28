@@ -19,6 +19,7 @@ class SearchBar extends Component {
 
   render() {
     // -- with separate defined method
+    // return <input onChange = {event => {this.onInputChange(event)}} />
     // return <input onChange = {this.onInputChange} />
 
     // refresh based on state change
@@ -33,7 +34,6 @@ class SearchBar extends Component {
       <div className="search-bar">
         <input
         value = { this.state.term }
-        // onChange = { event => onInputChange(event.target.value)}
         onChange = { event => this.onInputChange(event.target.value)}
       />
 
